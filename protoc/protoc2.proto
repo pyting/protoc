@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+option go_package = "protoc2";
+
+
+message M1 {
+    optional string str_1 = 1;
+    optional bytes bytes_1 = 2;
+    optional int32 int32_1 = 3;
+    optional int32 int32_2 = 4;
+    optional uint32 uint32_1 = 5;
+    optional sint32 sint32_1 = 6;
+    optional sint32 sint32_2 = 7;
+    optional fixed32 fixed32_1 = 8;
+    optional fixed32 fixed32_2 = 9;
+    optional sfixed32 sfixed32_1 = 10;
+    optional sfixed32 sfixed32_2 = 11;
+    optional int64 int64_1 = 12;
+    optional int64 int64_2 = 13;
+    optional uint64 uint64_1 = 14;
+    optional sint64 sint64_1 = 15;
+    optional sint64 sint64_2 = 16;
+    optional fixed64 fixed64_1 = 17;
+    optional fixed64 fixed64_2 = 18;
+    optional sfixed64 sfixed64_1 = 19;
+    optional sfixed64 sfixed64_2 = 20;
+    optional bool bool_1 = 21;
+    optional bool bool_2 = 22;
+    optional float float_1 = 23;
+    optional float float_2 = 24;
+    optional double double_1 = 25;
+    optional double double_2 = 26;
+
+
+    enum Enum_1 {
+        Enum_1_0 = 0;
+        Enum_1_1 = 1;
+        Enum_1_2 = 2;
+    }
+    repeated Enum_1 enum_1 = 27;
+}
+
+message M0 {
+    repeated M1 m1 = 1;
+}

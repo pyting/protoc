@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option go_package = "protoc3";
+
+
+message M1 {
+    string str_1 = 1;
+    bytes bytes_1 = 2;
+    int32 int32_1 = 3;
+    int32 int32_2 = 4;
+    uint32 uint32_1 = 5;
+    sint32 sint32_1 = 6;
+    sint32 sint32_2 = 7;
+    fixed32 fixed32_1 = 8;
+    fixed32 fixed32_2 = 9;
+    sfixed32 sfixed32_1 = 10;
+    sfixed32 sfixed32_2 = 11;
+    int64 int64_1 = 12;
+    int64 int64_2 = 13;
+    uint64 uint64_1 = 14;
+    sint64 sint64_1 = 15;
+    sint64 sint64_2 = 16;
+    fixed64 fixed64_1 = 17;
+    fixed64 fixed64_2 = 18;
+    sfixed64 sfixed64_1 = 19;
+    sfixed64 sfixed64_2 = 20;
+    bool bool_1 = 21;
+    bool bool_2 = 22;
+    float float_1 = 23;
+    float float_2 = 24;
+    double double_1 = 25;
+    double double_2 = 26;
+
+
+    enum Enum_1 {
+        Enum_1_0 = 0;
+        Enum_1_1 = 1;
+        Enum_1_2 = 2;
+    }
+    repeated Enum_1 enum_1 = 27;
+}
+
+message M0 {
+    repeated M1 m1 = 1;
+}
