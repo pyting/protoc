@@ -67,4 +67,4 @@ WORKDIR /home/${user}
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
-ENTRYPOINT ["jenkins-slave"]
+#ENTRYPOINT ["jenkins-slave"]
