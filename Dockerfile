@@ -50,7 +50,10 @@ RUN set -eux; \
     echo >&2 'TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)'; \
     echo >&2; \
     exit 1; \
-    fi;
+    fi;\
+    \
+    export PATH="/usr/local/go/bin:$PATH"; \
+    go version
     
 ENV PATH=/usr/local/go/bin:$PATH; 
 RUN go version;
