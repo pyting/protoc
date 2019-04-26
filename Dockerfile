@@ -3,13 +3,13 @@ FROM jenkins/jnlp-slave:latest
 USER root
 
 
-COPY /tmp/ca.pem /tmp/
-COPY /tmp/ca-key.pem /tmp/
-COPY /tmp/server.pem /tmp/
-COPY /tmp/server-key.pem /tmp/
-COPY /usr/bin/kubectl /usr/bin/
-COPY /tmp/config /tmp/
-COPY /root/config /root/
+COPY ./ca.pem /tmp/
+COPY ./ca-key.pem /tmp/
+COPY ./server.pem /tmp/
+COPY ./server-key.pem /tmp/
+COPY ./kubectl /usr/bin/
+COPY ./config /tmp/
+COPY ./config /root/
 
 # gcc for cgo
 RUN apt-get update && apt-get install -y --no-install-recommends \
