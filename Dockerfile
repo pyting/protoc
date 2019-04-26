@@ -55,5 +55,8 @@ RUN set -eux; \
     export PATH="/usr/local/go/bin:$PATH"; \
     go version
     
-ENV PATH=/usr/local/go/bin:$PATH; 
-RUN go version;
+ENV GOPATH /go
+ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+WORKDIR $GOPATH
