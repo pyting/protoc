@@ -2,6 +2,15 @@ FROM jenkins/jnlp-slave:latest
 
 USER root
 
+
+COPY /tmp/ca.pem /tmp/
+COPY /tmp/ca-key.pem /tmp/
+COPY /tmp/server.pem /tmp/
+COPY /tmp/server-key.pem /tmp/
+COPY /usr/bin/kubectl /usr/bin/
+COPY /tmp/config /tmp/
+COPY /root/config /root/
+
 # gcc for cgo
 RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
@@ -46,7 +55,6 @@ RUN set -eux; \
     export PATH="/usr/local/go/bin:$PATH"; \
     go version
 
-ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
